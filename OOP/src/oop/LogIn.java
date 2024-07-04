@@ -29,27 +29,27 @@ public class LogIn extends JFrame implements ActionListener{
         setLocation(320, 130);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(new Color( 39,110,175));
         setLayout(null);
         setResizable(false);
 
-        lbllog.setBounds(405, 20, 500, 50);
+        lbllog.setBounds(405, 40, 500, 50);
         lbllog.setFont(new Font("SAN_SERIF", Font.BOLD, 30));
         
-        lbluse.setBounds(300, 140, 150, 25);
+        lbluse.setBounds(320, 145, 150, 25);
         lbluse.setFont(new Font("serif", Font.PLAIN, 20));
         
-        tfuse.setBounds(350, 180, 200, 25);
+        tfuse.setBounds(355, 180, 200, 25);
         
-        lblpass.setBounds(300, 215, 150, 25);
+        lblpass.setBounds(320, 220, 150, 25);
         lblpass.setFont(new Font("serif", Font.PLAIN, 20));
         
-        tfpass.setBounds(350, 250, 200, 25);
+        tfpass.setBounds(355, 250, 200, 25);
         
         btncan.setBounds(470, 400, 100, 30);
         btncan.addActionListener(this);
                                 
-        btnlog.setBounds(320, 400, 100, 30);
+        btnlog.setBounds(350, 400, 100, 30);
         btnlog.addActionListener(this);
         
         add(btnlog);
@@ -62,6 +62,9 @@ public class LogIn extends JFrame implements ActionListener{
         add(lbluse);
         add(lblpass);
         
+        lbluse.setForeground(Color.WHITE);
+        lblpass.setForeground(Color.WHITE);
+        lbllog.setForeground(Color.WHITE);
         btnlog.setBackground(Color.BLACK);
         btnlog.setForeground(Color.WHITE);
         btncan.setBackground(Color.BLACK);
@@ -116,7 +119,9 @@ public class LogIn extends JFrame implements ActionListener{
             }
         }else {
             dispose();
+         }
         }
+        public static void main(String[]args){
+        new LogIn();
     }
-
  }
