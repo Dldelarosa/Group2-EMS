@@ -31,7 +31,7 @@ public class FileReq extends JFrame implements ActionListener{
     JComboBox req;
     
     FileReq() {
-        getContentPane().setBackground(Color.WHITE);
+        getContentPane().setBackground(new Color(206,235,251));
         setLayout(null);
         
         JLabel heading = new JLabel("File Request",SwingConstants.CENTER);
@@ -108,15 +108,15 @@ public class FileReq extends JFrame implements ActionListener{
         add = new JButton("Submit");
         add.setBounds(280, 480, 150, 40);
         add.addActionListener(this);
-        add.setBackground(Color.BLACK);
-        add.setForeground(Color.WHITE);
+        add.setBackground(Color.WHITE);
+        add.setForeground(Color.BLACK);
         add(add);
         
         back = new JButton("Back");
         back.setBounds(440, 480, 150, 40);
         back.addActionListener(this);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
+        back.setBackground(Color.WHITE);
+        back.setForeground(Color.BLACK);
         add(back);
         
         setSize(900, 600);

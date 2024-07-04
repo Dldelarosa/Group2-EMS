@@ -1,4 +1,4 @@
- package oop;
+package oop;
 
 import com.sun.jdi.connect.spi.Connection;
 import java.awt.*;
@@ -29,7 +29,7 @@ public class LogIn extends JFrame implements ActionListener{
         setLocation(320, 130);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(new Color( 39,110,175));
+        getContentPane().setBackground(new Color( 52,69,79));
         setLayout(null);
         setResizable(false);
 
@@ -65,10 +65,10 @@ public class LogIn extends JFrame implements ActionListener{
         lbluse.setForeground(Color.WHITE);
         lblpass.setForeground(Color.WHITE);
         lbllog.setForeground(Color.WHITE);
-        btnlog.setBackground(Color.BLACK);
-        btnlog.setForeground(Color.WHITE);
-        btncan.setBackground(Color.BLACK);
-        btncan.setForeground(Color.WHITE);
+        btnlog.setBackground(Color.WHITE);
+        btnlog.setForeground(Color.BLACK);
+        btncan.setBackground(Color.WHITE);
+        btncan.setForeground(Color.BLACK);
     }
     public void actionPerformed(ActionEvent ae){
         dispose();
