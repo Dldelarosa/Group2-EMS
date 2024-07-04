@@ -1,4 +1,4 @@
- package oop;
+package oop;
 
 import com.sun.jdi.connect.spi.Connection;
 import java.awt.*;
@@ -17,8 +17,11 @@ public class LogIn extends JFrame implements ActionListener{
     JLabel lbllog = new JLabel("LOGIN");
     JLabel lbluse = new JLabel("USERNAME:");
     JLabel lblpass = new JLabel("PASSWORD:");
+    JLabel lblcr = new JLabel("Create an Account?");
+    JLabel lblsu = new JLabel("SignUp");
+    JPasswordField pass = new JPasswordField();
     JTextField tfuse = new JTextField();
-    JTextField tfpass = new JTextField();
+    
     JButton btnlog = new JButton("LogIn");
     JButton btncan = new JButton("Exit");
     Connection conn;
@@ -29,7 +32,11 @@ public class LogIn extends JFrame implements ActionListener{
         setLocation(320, 130);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         getContentPane().setBackground(new Color( 39,110,175));
+
+        getContentPane().setBackground(new Color( 52,69,79));
+
         setLayout(null);
         setResizable(false);
 
@@ -44,7 +51,13 @@ public class LogIn extends JFrame implements ActionListener{
         lblpass.setBounds(320, 220, 150, 25);
         lblpass.setFont(new Font("serif", Font.PLAIN, 20));
         
-        tfpass.setBounds(355, 250, 200, 25);
+        pass.setBounds(355, 250, 200, 25);
+        
+        lblcr.setBounds(355, 280, 200, 25);
+        lblcr.setFont(new Font("serif", Font.PLAIN, 17));
+        
+        lblsu.setBounds(490, 280, 150, 25);
+        lblsu.setFont(new Font("serif", Font.PLAIN, 17));
         
         btncan.setBounds(470, 400, 100, 30);
         btncan.addActionListener(this);
@@ -56,26 +69,36 @@ public class LogIn extends JFrame implements ActionListener{
         add(btncan);
         
         add(tfuse);
-        add(tfpass);
+        add(pass);
         
         add(lbllog);
         add(lbluse);
         add(lblpass);
+        add(lblcr);
+        add(lblsu);
         
         lbluse.setForeground(Color.WHITE);
         lblpass.setForeground(Color.WHITE);
         lbllog.setForeground(Color.WHITE);
+        lblcr.setForeground(Color.WHITE);
+        lblsu.setForeground(Color.WHITE);
+
         btnlog.setBackground(Color.BLACK);
         btnlog.setForeground(Color.WHITE);
         btncan.setBackground(Color.BLACK);
         btncan.setForeground(Color.WHITE);
+
+        btnlog.setBackground(Color.WHITE);
+        btnlog.setForeground(Color.BLACK);
+        btncan.setBackground(Color.WHITE);
+        btncan.setForeground(Color.BLACK);
     }
     public void actionPerformed(ActionEvent ae){
         dispose();
         if (ae.getSource()== btnlog){                         
        
             String username = tfuse.getText().trim();
-            String password = new String(tfpass.getText());
+            String password = new String(pass.getPassword());
 
             
             java.sql.Connection conn = null;

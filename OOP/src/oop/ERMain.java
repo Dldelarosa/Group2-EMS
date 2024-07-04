@@ -4,10 +4,7 @@
  */
 package oop;
 
-/**
- *
- * @author admin
- */
+
 public class ERMain {
 
     /**
