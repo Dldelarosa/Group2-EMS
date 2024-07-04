@@ -126,6 +126,9 @@ public class SignUp extends JFrame implements ActionListener{
                     ex.printStackTrace();
                 }
             }
+        }else {
+            dispose();
+            new LogIn();
         }
     }
         public static void main(String[]args){
