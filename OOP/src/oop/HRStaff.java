@@ -94,6 +94,7 @@ public class HRStaff extends JFrame implements ActionListener{
             new AddEmployee();
         } else if (ae.getSource() == btnEmployeeRecords) {
             dispose();
+            new EmployeeRecords();
             
         } else if (ae.getSource() == btnEmployeeRequest) {
             dispose();
