@@ -23,7 +23,7 @@ public class RECORDS extends JFrame {
         setTitle("Viewing of Records");
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.gray);
+        getContentPane().setBackground(Color.white);
 
         // Create table model
         DefaultTableModel model = new DefaultTableModel();

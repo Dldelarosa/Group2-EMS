@@ -28,7 +28,7 @@ public class SignUp extends JFrame implements ActionListener{
     Connection conn;
      
     SignUp()  {
-        setTitle("LOGIN");
+        setTitle("SIGNUP");
         setSize(900, 550);
         setLocation(320, 130);
         setVisible(true);
