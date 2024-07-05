@@ -19,20 +19,18 @@ public class RECORDS extends JFrame {
     private JButton loadButton, editButton, deleteButton, backButton;
 
     RECORDS() {
-        setSize(800, 600);  // Increased width to accommodate buttons on the right side
+        setSize(800, 600);
         setTitle("Viewing of Records");
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.white);
-
-        // Create table model
+ 
         DefaultTableModel model = new DefaultTableModel();
         table = new JTable(model);
         scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(30, 40, 740, 450);  // Adjusted height to fill the space
+        scrollPane.setBounds(30, 40, 740, 450);
         add(scrollPane);
 
-        // Add columns to the table model
         model.addColumn("Name");
         model.addColumn("Employee ID");
         model.addColumn("Date of birth");
@@ -43,20 +41,17 @@ public class RECORDS extends JFrame {
         model.addColumn("Contact No.");
         model.addColumn("Performance Review");
 
-        // Fetch records from database and populate the table
         fetchAndDisplayRecords(model);
-
-        // Create buttons
+        
         loadButton = new JButton("Load");
         editButton = new JButton("Edit");
         deleteButton = new JButton("Delete");
         backButton = new JButton("Back");
-
-        // Set bounds for buttons
+   
         int buttonWidth = 100;
         int buttonHeight = 30;
         int yPosition = 500;
-        int spacing = 20;  // Spacing between buttons
+        int spacing = 20;
         int totalButtonWidth = (buttonWidth + spacing) * 4 - spacing;
         int xPosition = (getWidth() - totalButtonWidth) / 2;
 
@@ -65,38 +60,35 @@ public class RECORDS extends JFrame {
         deleteButton.setBounds(xPosition + 2 * (buttonWidth + spacing), yPosition, buttonWidth, buttonHeight);
         backButton.setBounds(xPosition + 3 * (buttonWidth + spacing), yPosition, buttonWidth, buttonHeight);
 
-        // Add buttons to the frame
+
         add(loadButton);
         add(editButton);
         add(deleteButton);
         add(backButton);
 
-        // Add action listeners to buttons
+
         loadButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Add action for load button
+               
                 fetchAndDisplayRecords(model);
             }
         });
 
         editButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Add action for edit button
-                // Edit record logic here
+
             }
         });
 
         deleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Add action for delete button
-                // Delete record logic here
+              
             }
         });
 
         backButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Add action for back button
-                // Back button logic here
+              
             }
         });
 
@@ -109,15 +101,14 @@ public class RECORDS extends JFrame {
         ResultSet rs = null;
 
         try {
-            // Connect to the database
+       
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/employees", "root", "12345");
 
-            // Create and execute a query
+           
             stmt = conn.createStatement();
             String sql = "SELECT * FROM tbl_employee_detail";
             rs = stmt.executeQuery(sql);
 
-            // Process the result set
             while (rs.next()) {
                 String username = rs.getString("username");
                 String age = rs.getString("age");
@@ -125,13 +116,11 @@ public class RECORDS extends JFrame {
                 String address = rs.getString("address");
                 String contactnum = rs.getString("contactnum");
 
-                // Add row to table model
                 model.addRow(new Object[]{username, age, gender, address, contactnum});
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
-            // Close resources
             try {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();
